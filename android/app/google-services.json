@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "810730734394",
+    "project_id": "vision-talk",
+    "storage_bucket": "vision-talk.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:810730734394:android:fded3c38b96142f9e84603",
+        "android_client_info": {
+          "package_name": "com.example.visiontalk"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDEK48meceM4XpLTeRKrB6S8eZRq1OvpBI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
