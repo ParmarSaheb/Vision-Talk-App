@@ -22,9 +22,7 @@ class VideoCall extends StatefulWidget {
 }
 
 class _VideoCallState extends State<VideoCall> {
-
   final Signaling signaling = Signaling();
-
 
   @override
   void initState() {
@@ -36,11 +34,12 @@ class _VideoCallState extends State<VideoCall> {
     });
     super.initState();
   }
-  
+
   @override
   void dispose() async {
     widget._localRenderer.dispose();
     widget._remoteRenderer.dispose();
+    signaling.hangUp(widget._localRenderer);
     super.dispose();
   }
 
@@ -77,7 +76,6 @@ class _VideoCallState extends State<VideoCall> {
           Expanded(
               child: Stack(
             children: [
-              
               RTCVideoView(widget._remoteRenderer),
               Positioned(
                   top: 20,
@@ -85,11 +83,11 @@ class _VideoCallState extends State<VideoCall> {
                   height: Get.height * 0.24,
                   width: Get.height * 0.15,
                   child: Container(
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(16),
-                    ),
-                    child: RTCVideoView(widget._localRenderer, mirror: true)
-                  )),
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(16),
+                      ),
+                      child:
+                          RTCVideoView(widget._localRenderer, mirror: true))),
               Align(
                 alignment: Alignment.bottomCenter,
                 child: Padding(
